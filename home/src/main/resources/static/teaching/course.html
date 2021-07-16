@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>课表-管理学院实验中心</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css"/>
+
+    <style>
+        .layui-table-cell {
+            height: auto;
+            overflow: visible;
+            text-overflow: inherit;
+            white-space: normal;
+        }
+    </style>
+
+</head>
+<body>
+<div class="layui-row" style="margin: 20px 5px;">
+    <table class="layui-hide" id="weak" lay-filter="weak"></table>
+</div>
+</body>
+<script src="/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    layui.use(['element', 'form', 'table'], function () {
+        var element = layui.element;
+        var form = layui.form;
+        var $ = layui.jquery;
+        var table1 = layui.table;
+
+        table1.render({
+            elem: '#weak',
+            url: '/course/weak',
+            title: '用户数据表',
+            done: function (res, curr, count) {
+                $('th').css({'background-color': '#d6e4f5', 'color': '#fff'});
+            },
+            cols: [
+                [{
+                    field: 'number',
+                    title: '节次',
+
+                },
+                    {
+                        field: 'sunday',
+                        title: '星期日',
+                        templet: function (row) {
+                            return '<span style="color: ' + Color() + '">' + row.sunday + '</span>'
+                        }
+
+                    },
+                    {
+                        field: 'monday',
+                        title: '星期一',
+                        templet: function (row) {
+                            return '<span style="color: ' + Color() + '">' + row.monday + '</span>'
+                        }
+
+
+                    }, {
+                    field: 'tuesday',
+                    title: '星期二',
+                    templet: function (row) {
+                        return '<span style="color: ' + Color() + '">' + row.tuesday + '</span>'
+                    }
+
+
+                }, {
+                    field: 'wednesday',
+                    title: '星期三',
+                    templet: function (row) {
+                        return '<span style="color: ' + Color() + '">' + row.wednesday + '</span>'
+                    }
+
+
+                }, {
+                    field: 'thursday',
+                    title: '星期四',
+                    templet: function (row) {
+                        return '<span style="color: ' + Color() + '">' + row.thursday + '</span>'
+                    }
+
+
+                }, {
+                    field: 'friday',
+                    title: '星期五',
+                    templet: function (row) {
+                        return '<span style="color: ' + Color() + '">' + row.friday + '</span>'
+                    }
+
+
+                }, {
+                    field: 'saturday',
+                    title: '星期六',
+                    templet: function (row) {
+                        return '<span style="color: ' + Color() + '">' + row.saturday + '</span>'
+                    }
+
+
+                },
+
+
+                ]
+            ],
+        });
+
+        function Color() {
+            r = Math.floor(Math.random() * 180);
+            g = Math.floor(Math.random() * 180);
+            b = Math.floor(Math.random() * 180);
+            return 'rgba(' + r + ',' + g + ',' + b + ',0.8)';
+        }
+
+    });
+</script>
+</html>

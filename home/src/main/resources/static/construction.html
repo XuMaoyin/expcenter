@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>管理员登录-管理学院实验中心</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		
+	</head>
+	<body>
+
+		<!-- 主体部分 -->
+		<div class="layui-row" style="margin: 20px 5px;">
+
+			<div class="layui-col-md4">&nbsp;</div>
+			<div class="layui-col-md5">
+				<form class="layui-form" action="">
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">身份：</label>
+						<div class="layui-input-block">
+							<select name="city" lay-verify="required">
+								<option value="">请选择</option>
+								<option value="teacher">教师</option>
+								<option value="admin">管理员</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">用户名：</label>
+						<div class="layui-input-block">
+							<input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">密码：</label>
+						<div class="layui-input-block">
+							<input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">登录</button>
+							<button type="reset" class="layui-btn layui-btn-warm">重置</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="layui-col-md3">&nbsp;</div>
+		</div>
+
+	</body>
+<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			layui.use(['element', 'form', 'layer'], function() {
+				var element = layui.element;
+				var form = layui.form;
+				var layer = layui.layer;
+
+
+				//监听提交
+				form.on('submit(formDemo)', function(data) {
+					layer.msg(JSON.stringify(data.field));
+					window.parent.location.href = 'http://localhost:8080'
+					return false;
+				});
+			});
+		</script>
+</html>

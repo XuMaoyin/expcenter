@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/beans/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beans/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/.eslintrc.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/.gitignore" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/.idea" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/README.md" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/babel.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/dist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/node_modules" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/package-lock.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/public" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/src" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/glxy/vue.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/home/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/generatorConfig.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/d_banner_school.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/images" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/img/bg.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/img/d_banner_school.gif" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/img/qr.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/swiper/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/home/src/main/resources/static/swiper/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/class.xlsx" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/course.xlsx" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/favicon.ico" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/fonts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/img" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/manage/src/main/resources/static/js" charset="UTF-8" />
+  </component>
+</project>

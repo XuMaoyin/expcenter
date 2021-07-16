@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <title>首页-管理学院实验中心</title>
+    <link rel="stylesheet" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+</head>
+<body>
+
+<!--中心新闻-->
+<div class="layui-row">
+    <blockquote class="layui-elem-quote"> 中心新闻</blockquote>
+    <div class="layui-row">
+        <div class="layui-col-md5 animated bounceInLeft delay-3s">
+            <div id="certify">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img alt="" src="images/1.jpg"/></div>
+                        <div class="swiper-slide"><img alt="" src="images/2.jpg"/></div>
+                        <div class="swiper-slide"><img src="images/3.jpg"/></div>
+                        <div class="swiper-slide"><img src="images/4.jpg"/></div>
+                        <div class="swiper-slide"><img src="images/5.jpg"/></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md1">&nbsp;</div>
+        <div class="layui-col-md6 animated bounceInRight delay-3s">
+            <ul class="ul-li-a">
+                <li>
+                    <a href="#">今日两校合并交谈会在实验中心顺利进行<span style="float: right;margin-right: 5px">2021-03-15</span></a>
+                </li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--当前课表 -->
+<div class="layui-row" style="margin: 20px 5px;">
+    <blockquote class="layui-elem-quote wow bounceInUp"> 今日课表</blockquote>
+    <div class="layui-row animated fadeInUp delay-3s" style="padding: 10px 0;;">
+        <table class="layui-hide" id="today" lay-filter="today"></table>
+    </div>
+</div>
+<!--当前课表 -->
+
+<div class="layui-row ">
+    <div class="layui-col-md5 animated fadeInLeftBig delay-3s">
+        <blockquote class="layui-elem-quote">
+            <a href="/platform/nav.html" target="external-frame">常用平台>></a>
+        </blockquote>
+        <ul id="platformUl"></ul>
+    </div>
+
+    <div class="layui-col-md1">&nbsp</div>
+    <div class="layui-col-md6 animated fadeInRightBig ">
+        <blockquote class="layui-elem-quote">
+            <a href="/notice/lost.html" target="external-frame">
+                通知公告>>
+            </a>
+        </blockquote>
+        <ul id="noticeUL" class="ul-li-a">
+        </ul>
+
+    </div>
+
+
+    <!-- 友情链接 -->
+    <div class="layui-row">
+        <blockquote class="layui-elem-quote">友情链接</blockquote>
+        <div class="layui-row" id="urls" >
+            <a href="http://jwgl.ncist.edu.cn" target="_blank">教务管理系统</a>
+            <a href="http://jwc.ncist.edu.cn" target="_blank">教务处</a>
+            <a href="http://www.ncist.edu.cn" target="_blank">学校首页</a>
+            <a href="http://my.ncist.edu.cn/EIP/" target="_blank">信息门户</a>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="swiper/js/swiper.min.js"></script>
+<script src="js/index.js"></script>
+</html>

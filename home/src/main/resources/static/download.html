@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>学生申请-管理学院实验中心</title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" href="css/common.css" />
+	</head>
+	<body>
+		<!-- 主体部分 -->
+		<div class="layui-row" style="margin: 20px 5px;">
+			<div class="layui-col-md4">&nbsp;</div>
+			<div class="layui-col-md5">
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">组织：</label>
+						<div class="layui-input-block">
+							<input type="text" name="department" required lay-verify="required" placeholder="请输入社团/组织名称"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">负责人：</label>
+						<div class="layui-input-block">
+							<input type="text" name="director" required lay-verify="required" placeholder="请输入姓名"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">联系电话：</label>
+						<div class="layui-input-block">
+							<input name="tel" required lay-verify="required" placeholder="请输入电话" autocomplete="off"
+								class="layui-input ">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">邮箱：</label>
+						<div class="layui-input-block">
+							<input type="email" name="email" required lay-verify="required" placeholder="请输入邮箱"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">所属班级：</label>
+						<div class="layui-input-block">
+							<select name="class" lay-verify="required">
+								<option value=""></option>
+								<option value="0">北京</option>
+								<option value="1">上海</option>
+								<option value="2">广州</option>
+								<option value="3">深圳</option>
+								<option value="4">杭州</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">指导老师：</label>
+						<div class="layui-input-block">
+							<select name="teacher" lay-verify="required">
+								<option value=""></option>
+								<option value="0">北京</option>
+								<option value="1">上海</option>
+								<option value="2">广州</option>
+								<option value="3">深圳</option>
+								<option value="4">杭州</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="layui-form-item layui-form-text">
+						<label class="layui-form-label">使用描述：</label>
+						<div class="layui-input-block">
+							<textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">人数：</label>
+						<div class="layui-input-block">
+							<input type="text" name="peoples" required lay-verify="required" placeholder="请输入人数"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn layui-btn-normal" lay-submit lay-filter="formDemo">立即提交</button>
+							<button type="reset" class="layui-btn layui-btn-warm">重置</button>
+							<button class="layui-btn layui-btn-primary ">申请进度查询</button>
+						</div>
+
+					</div>
+						
+				</form>
+			</div>
+			<div class="layui-col-md3">&nbsp;</div>
+		</div>
+	</body>
+	<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		layui.use(['element', 'form', 'table'], function() {
+			var element = layui.element;
+			var form = layui.form;
+		});
+	</script>
+</html>

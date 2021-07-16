@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ncist.glx.expcenter.home.mapper.ActivityMapper">
+  <resultMap id="BaseResultMap" type="cn.ncist.glx.expcenter.beans.po.Activity">
+
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="activity_name" jdbcType="VARCHAR" property="activityName" />
+    <result column="room_id" jdbcType="INTEGER" property="roomId" />
+    <result column="datetime" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="details" jdbcType="VARCHAR" property="details" />
+    <result column="people" jdbcType="VARCHAR" property="people" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="club_id" jdbcType="INTEGER" property="clubId" />
+    <result column="leader_id" jdbcType="INTEGER" property="leaderId" />
+  </resultMap>
+
+
+  <!--查询当天的活动-->
+  <select id="selectToday" resultMap="BaseResultMap">
+    select id, activity_name, room_id, datetime, number, people,type,leader_id,club_id
+    from activity
+    where SUBSTRING(datetime,1,10) = SUBSTRING(NOW(),1,10)
+  </select>
+
+  <!--查询本周的活动-->
+  <select id="selectWeak" resultMap="BaseResultMap">
+    select id, activity_name, room_id, datetime, number, people,type,leader_id,club_id
+    from activity
+    where yearweek(datetime) = yearweek(NOW())
+  </select>
+
+
+</mapper>

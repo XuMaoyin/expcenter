@@ -1,0 +1,47 @@
+#certify {
+    position: relative;
+    margin: 5px auto;
+    width: 520px;
+}
+
+#certify  .swiper-slide {
+    width: 520px;
+    height: 408px;
+    background: #fff;
+    box-shadow: 0 8px 30px #ddd;
+}
+#certify  .swiper-slide img{
+    display:block;
+}
+#certify .swiper-pagination {
+    width: 100%;
+    bottom: 20px;
+}
+
+.layui-elem-quote{
+    margin-top: 5px;
+    background: #04455f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.layui-elem-quote a{
+    color: white;
+}
+a:hover{
+    color: orange;
+}
+.ul-li-a li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+#urls a {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+

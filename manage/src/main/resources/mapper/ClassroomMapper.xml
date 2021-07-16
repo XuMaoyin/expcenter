@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ncist.glx.expcenter.manage.mapper.ClassroomMapper">
+  <resultMap id="BaseResultMap" type="cn.ncist.glx.expcenter.beans.po.Classroom">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="room_name" jdbcType="VARCHAR" property="roomName" />
+    <result column="number" jdbcType="VARCHAR" property="number" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="leader_id" jdbcType="INTEGER" property="leaderId" />
+    <result column="people" jdbcType="VARCHAR" property="people" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from classroom
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="cn.ncist.glx.expcenter.beans.po.Classroom">
+    insert into classroom (id, room_name, `number`,
+      `desc`, leader_id, people
+      )
+    values (#{id,jdbcType=INTEGER}, #{roomName,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, 
+      #{desc,jdbcType=VARCHAR}, #{leaderId,jdbcType=INTEGER}, #{people,jdbcType=VARCHAR}
+      )
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="cn.ncist.glx.expcenter.beans.po.Classroom">
+    update classroom
+    set room_name = #{roomName,jdbcType=VARCHAR},
+      `number` = #{number,jdbcType=VARCHAR},
+      `desc` = #{desc,jdbcType=VARCHAR},
+      leader_id = #{leaderId,jdbcType=INTEGER},
+      people = #{people,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, room_name, `number`, `desc`, leader_id, people
+    from classroom
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, room_name, `number`, `desc`, leader_id, people
+    from classroom
+  </select>
+
+  <select id="selectByNumber" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select id, room_name, `number`
+    from classroom
+    where `number` = #{number}
+  </select>
+
+
+</mapper>

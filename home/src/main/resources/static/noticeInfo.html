@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.3/quill.snow.css">
+    <style>
+        .ql-editor img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-main">
+    <h1 id ='title' style="text-align: center;margin: 10px 5px"></h1>
+    <hr style="background: #ff001e;margin: 50px auto;width: 100%" />
+    <div id="noticeInfo" class="ql-editor"></div>
+</div>
+
+</body>
+<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    layui.use(['element', 'form'], function () {
+        let $ = layui.jquery;
+        //获取公告id
+        const id = getQueryVariable("id") ;
+        //console.log(id)
+        $.getJSON("/notice/notice?id="+id, res=>{
+                let notice = res.data ;
+                $("#noticeInfo").html(notice.content)
+                $("#title").html(notice.title)
+            }
+        )
+
+        function getQueryVariable(variable)
+        {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0;i<vars.length;i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] === variable){return pair[1];}
+            }
+            return false;
+        }
+    });
+</script>
+</html>

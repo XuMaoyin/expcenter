@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ncist.glx.expcenter.manage.mapper.ActivityMapper">
+    <resultMap id="BaseResultMap" type="cn.ncist.glx.expcenter.beans.po.Activity">
+
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="activity_name" jdbcType="VARCHAR" property="activityName"/>
+        <result column="room_id" jdbcType="INTEGER" property="roomId"/>
+        <result column="datetime" jdbcType="TIMESTAMP" property="datetime"/>
+        <result column="number" jdbcType="INTEGER" property="number"/>
+        <result column="details" jdbcType="VARCHAR" property="details"/>
+        <result column="people" jdbcType="VARCHAR" property="people"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="club_id" jdbcType="INTEGER" property="clubId"/>
+        <result column="leader_id" jdbcType="INTEGER" property="leaderId"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+
+        delete
+        from activity
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="cn.ncist.glx.expcenter.beans.po.Activity">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into activity (id, activity_name, room_id,
+        datetime, number, details,
+        people, status, type,
+        club_id, leader_id)
+        values (#{id,jdbcType=INTEGER}, #{activityName,jdbcType=VARCHAR}, #{roomId,jdbcType=INTEGER},
+        #{datetime,jdbcType=TIMESTAMP}, #{number,jdbcType=INTEGER}, #{details,jdbcType=VARCHAR},
+        #{people,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR},
+        #{clubId,jdbcType=INTEGER}, #{leaderId,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="cn.ncist.glx.expcenter.beans.po.Activity">
+
+        update activity
+        set activity_name = #{activityName,jdbcType=VARCHAR},
+            room_id       = #{roomId,jdbcType=INTEGER},
+            datetime      = #{datetime,jdbcType=TIMESTAMP},
+            number        = #{number,jdbcType=INTEGER},
+            details       = #{details,jdbcType=VARCHAR},
+            people        = #{people,jdbcType=VARCHAR},
+            status        = #{status,jdbcType=VARCHAR},
+            type          = #{type,jdbcType=VARCHAR},
+            club_id       = #{clubId,jdbcType=INTEGER},
+            leader_id     = #{leaderId,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+        select id,
+               activity_name,
+               room_id,
+               datetime,
+               number,
+               details,
+               people,
+               status,
+               type,
+               club_id,
+               leader_id
+        from activity
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap" parameterType="java.lang.String">
+
+        select id,
+               activity_name,
+               room_id,
+               datetime,
+               number,
+               details,
+               people,
+               status,
+               type,
+               club_id,
+               leader_id
+        from activity
+        where type = #{type}
+    </select>
+
+    <!--    根据名称搜索-->
+    <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+
+        select id,
+               activity_name,
+               room_id,
+               datetime,
+               number,
+               details,
+               people,
+               status,
+               type,
+               club_id,
+               leader_id
+        from activity
+        where type = #{type}
+          and activity_name like concat('%', #{activityName}, '%')
+    </select>
+
+
+    <select id="getRoomCount" parameterType="int" resultType="int">
+        select count(*)
+        from activity
+        where room_id = #{id}
+    </select>
+
+    <select id="geTeacher" resultMap="BaseResultMap" resultType="int">
+        select id,
+               activity_name,
+               room_id,
+               datetime,
+               number,
+               details,
+               people,
+               status,
+               type,
+               club_id,
+               leader_id
+        from activity
+        where type = 'teacher'
+          and leader_id = #{tid}
+    </select>
+
+    <!--查询某个社团申请的活动-->
+    <select id="getClub" resultMap="BaseResultMap" resultType="int">
+        select id,
+               activity_name,
+               room_id,
+               datetime,
+               number,
+               details,
+               people,
+               status,
+               type,
+               club_id,
+               leader_id
+        from activity
+        where type = 'club'
+          and club_id = #{cid}
+    </select>
+</mapper>

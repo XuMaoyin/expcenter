@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>经济管理学院实验中心</title>
+    <link rel="stylesheet" type="text/css" href="/layui/css/layui.css"/>
+    <style>
+        #head {
+
+        }
+
+        #head div div{
+            height: 100px;
+            display: inline-block;
+            padding-bottom: 5px;
+            line-height: 100px;
+        }
+
+        #head .title {
+            text-align: left;
+            font-size: 35px;
+            font-family: 'Arial Black';
+            color: #04455f
+        }
+        .box-active{
+            position: fixed;
+            top: 0;
+        }
+        .iframe{
+            margin-top: 70px;
+        }
+        .layui-nav {
+            background-color: #04455f;
+            font-size: 30px;
+            color: white;
+        }
+
+        .layui-nav-bar {
+            background: #01AAED;
+        }
+
+        .layui-nav-more {
+            display: none;
+        }
+        .foot{
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- 头部logo -->
+<div  style="background: url('/img/bg.jpg');background-size: 100% 100%">
+    <div class="layui-container" id="head">
+        <div class="layui-row">
+            <div class="layui-col-md5"  >
+                <img src="/img/d_banner_school.gif">
+            </div>
+            <div class="title layui-col-md7">
+                经管学院实验中心
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- 导航 -->
+<div id="box" style="background-color: #04455f;width: 100%">
+    <div class="layui-container layui-row">
+        <ul class="layui-nav">
+            <li class="layui-nav-item "><a href="/index">网站首页</a></li>
+            <li class="layui-nav-item ">
+                <a href="center">中心概况</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="/center/info">中心简介</a></dd>
+                    <dd><a href="/center/photo">中心印象</a></dd>
+                    <dd><a href="/center/contact">联系我们</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="/teaching">教学安排</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="/teaching/course">课表</a></dd>
+                    <dd><a href="/teaching/plan">教学计划公示</a></dd>
+                    <dd><a href="/teaching/activity">计划外临时使用公示</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item ">
+                <a href="/platform">实验平台建设</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="/platform/info">实验平台介绍</a></dd>
+                    <dd><a href="/platform/nav">实验平台导航</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item "><a href="/construction">实验室建设</a></li>
+            <li class="layui-nav-item ">
+                <a href="/notice">通知公告</a>
+                <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                    <dd><a href="/notice/center">中心通知</a></dd>
+                    <dd><a href="/notice/lost">失物招领</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item "><a href="/system">管理制度</a></li>
+            <li class="layui-nav-item "><a href="/download">下载中心</a></li>
+            <li class="layui-nav-item ">2020-2021学年第二学期 第十三周</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 主体内容 -->
+<div class="layui-row">
+    <div class="layui-col-md1">&nbsp;</div>
+    <div class="layui-col-md10">
+        <iframe id="external-frame" name="external-frame" width="100%" frameborder="0" scrolling="no"
+                th:src="${path}">
+        </iframe>
+    </div>
+    <div class="layui-col-md1">&nbsp;</div>
+</div>
+
+
+<!-- 底部 -->
+<div class="foot">
+        <hr style="background-color:#b5c5f7;height: 1px;"/>
+        <div style="padding-top: 10px;" class="layui-row">
+
+            <div class="layui-col-md6" style="text-align: center;">
+                <img width="150" src="/img/qr.png" alt="二维码"/>
+            </div>
+            <div class="layui-col-md6" style="text-align: center;">
+                <ul>
+                    <li style="margin: 10px auto;font-size: medium;">经济管理学院-实验中心</li>
+                    <li style="margin: 10px auto;font-size: medium;">地址：明德楼9楼东侧</li>
+                    <li style="margin: 10px auto;font-size: medium;">tel：9955887</li>
+                    <li style="margin: 10px auto;font-size: medium;">QQ:3654895853</li>
+                </ul>
+            </div>
+        </div>
+</div>
+
+</body>
+<script src="/layui/layui.js"></script>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function () {
+        var element = layui.element;
+        var $ = layui.jquery;
+
+        // 监听事件
+       /* window.addEventListener('scroll', function(){
+            let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+            if(t>0){
+                $('#box').addClass('box-active')
+                $('#external-frame').addClass('iframe')
+            }else{
+                $('#box').removeClass('box-active')
+                $('#external-frame').removeClass('iframe')
+            }
+        })*/
+    });
+
+    //iframe高度根据内容自适应
+    function reinitIframe() {
+        var iframe = document.getElementById("external-frame");
+        try {
+            var bHeight = iframe.contentWindow.document.body.scrollHeight;
+            var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+            var height = Math.max(bHeight, dHeight);
+            iframe.height = height;
+            //console.log(height);
+        } catch (ex) {
+        }
+    }
+    window.setInterval("reinitIframe()", 200);
+</script>
+</html>
